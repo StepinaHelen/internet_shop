@@ -9,6 +9,9 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { OrdersPageComponent } from './orders-page/orders-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from '../guards/auth.guard';
+import { QuillModule } from 'ngx-quill';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../shared/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { AuthGuard } from '../guards/auth.guard';
   ],
   imports: [
     CommonModule,
+    QuillModule.forRoot(),
     RouterModule.forChild([
       {
         path: '',

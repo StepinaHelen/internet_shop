@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { tap } from 'rxjs';
 
-// https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
-
 @Injectable({
   providedIn: 'root',
 })
@@ -48,6 +46,7 @@ export class AuthService {
   }
 
   isAuthenticated() {
+    console.log('this.token', this.token);
     return !!this.token;
   }
 }
