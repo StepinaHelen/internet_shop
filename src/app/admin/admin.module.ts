@@ -12,6 +12,7 @@ import { AuthGuard } from '../guards/auth.guard';
 import { QuillModule } from 'ngx-quill';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from '../shared/auth.interceptor';
+import { SearchPipe } from '../shared/search.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AuthInterceptor } from '../shared/auth.interceptor';
     EditPageComponent,
     DashboardPageComponent,
     OrdersPageComponent,
+    SearchPipe,
   ],
   imports: [
     CommonModule,

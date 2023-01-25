@@ -8,6 +8,7 @@ import { IFbResponse, IProducts } from '../shared/interfaces';
   providedIn: 'root',
 })
 export class ProductService {
+  type: string = 'Phone';
   constructor(private http: HttpClient) {}
 
   createProduct(product: any) {
@@ -59,5 +60,9 @@ export class ProductService {
       `${environment.fbDataBaseUrl}/products/${product.id}.json`,
       product
     );
+  }
+
+  setType(type: string) {
+    this.type = type;
   }
 }

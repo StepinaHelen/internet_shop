@@ -46,7 +46,6 @@ export class AuthService {
   }
 
   isAuthenticated() {
-    console.log('this.token', this.token);
     return !!this.token;
   }
 }
