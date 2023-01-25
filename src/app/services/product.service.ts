@@ -8,7 +8,9 @@ import { IFbResponse, IProducts } from '../shared/interfaces';
   providedIn: 'root',
 })
 export class ProductService {
-  type: string = 'Phone';
+  type: string = '';
+  cartProducts: IProducts[] = [];
+
   constructor(private http: HttpClient) {}
 
   createProduct(product: any) {
@@ -64,5 +66,9 @@ export class ProductService {
 
   setType(type: string) {
     this.type = type;
+  }
+
+  addProductToCart(product: IProducts) {
+    this.cartProducts.push(product);
   }
 }

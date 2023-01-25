@@ -11,8 +11,11 @@ import { IProducts } from '../../shared/interfaces';
 })
 export class ProductsComponent implements OnInit {
   @Input() product: IProducts;
-  constructor(
-  ) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {}
+
+  addToCart(product: IProducts) {
+    this.productService.addProductToCart(product);
+  }
 }

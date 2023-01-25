@@ -11,6 +11,7 @@ import { IProducts } from '../shared/interfaces';
 })
 export class ProductPageComponent implements OnInit {
   product$: Observable<IProducts> = new Observable();
+
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute
@@ -22,5 +23,9 @@ export class ProductPageComponent implements OnInit {
         return this.productService.getProductById(params['id']);
       })
     );
+  }
+
+  addToCart(product: IProducts) {
+    this.productService.addProductToCart(product);
   }
 }

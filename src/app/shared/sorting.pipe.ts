@@ -6,8 +6,12 @@ import { IProducts } from './interfaces';
 })
 export class SortingPipe implements PipeTransform {
   transform(products: IProducts[], type = ''): any {
-    return products.filter((product) => {
-      return product.type === type;
-    });
+    if (type) {
+      return products.filter((product) => {
+        return product.type === type;
+      });
+    } else {
+      return products;
+    }
   }
 }
